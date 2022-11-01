@@ -46,7 +46,7 @@ const App: React.FC = () => {
                             </LinkContainer>
                             <LinkContainer to="/people">
                                 <Nav.Link
-                                    className={auth.isAuthenticated ? "" : "d-none" /* TODO SECU */}
+                                    className={auth.isAuthenticated ? "" : "d-none"}
                                 >
                                     People
                                 </Nav.Link>

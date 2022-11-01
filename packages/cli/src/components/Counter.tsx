@@ -11,7 +11,7 @@ const Counter = () => {
     const [valeur, setValeur] = useState(0);
     const [errMsg, setErrMsg] = useState("");
 
-    const dir = settings.ROOT_DIR; // TODO SECU
+    const dir = settings.ROOT_DIR;
     const path = dir + "/" + valeur;
     useEffect(() => {
         const getPub = async (): Promise<void> => {

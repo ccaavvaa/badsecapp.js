@@ -17,7 +17,6 @@ export const directoryRouter = express.Router()
         if (!context.removeDirectoryRoot) {
             throw new HttpError(500, 'Invalid server configuration');
         }
-        // TODO SECU
         const fullPath = path.join(context.removeDirectoryRoot, directory);
         let stat: Stats;
         try {

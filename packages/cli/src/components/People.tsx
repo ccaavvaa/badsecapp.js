@@ -59,7 +59,7 @@ const People = () => {
     }, [search, firstName, lastName, age, photo]);
     return (
         <Container className="m-auto mt-5">
-            <div style={{ display: "none" }}>{debugMessage /* TODO SECU*/}</div>
+            <div style={{ display: "none" }}>{debugMessage}</div>
             <Alert key="danger" variant="danger" className={searchErrMsg ? "" : "d-none"}>
                 {searchErrMsg}
             </Alert>

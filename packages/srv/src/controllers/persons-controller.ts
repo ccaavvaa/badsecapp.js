@@ -47,10 +47,10 @@ async function createPerson(db: Database, data: any) {
         photoUrl: data.photoUrl,
     }
     const statements: string[] = [
-        `INSERT INTO PERSONNES(nom,prenom,age) VALUES ('${person.lastName}', '${person.firstName}', ${person.age})`, // TODO SECU
+        `INSERT INTO PERSONNES(nom,prenom,age) VALUES ('${person.lastName}', '${person.firstName}', ${person.age})`,
     ];
     if (data.photoUrl) {
-        statements.push(`INSERT INTO PHOTOS (nom, url) VALUES ('${person.lastName}', '${person.photoUrl}')`); // TODO SECU
+        statements.push(`INSERT INTO PHOTOS (nom, url) VALUES ('${person.lastName}', '${person.photoUrl}')`);
     }
     await db.runScript(statements);
     return person;
@@ -58,7 +58,7 @@ async function createPerson(db: Database, data: any) {
 
 async function getPersons(db: Database, nameHint: string, exactMatch = false): Promise<Person[]> {
     let sql = 'SELECT nom, prenom, age FROM PERSONNES'
-    if (nameHint) { // TODO SECU
+    if (nameHint) {
         const where = exactMatch ? `nom='${nameHint}'` : `nom LIKE '%${nameHint}%'`
         sql += ` WHERE ${where}`;
     }
@@ -68,7 +68,6 @@ async function getPersons(db: Database, nameHint: string, exactMatch = false): P
         lastName: v.nom,
         age: v.age,
     }));
-    // TODO SECU
     for (const person of persons) {
         const urls = await db.select(`SELECT url FROM PHOTOS WHERE nom='${person.lastName}'`);
         if (urls && urls.length) {
@@ -83,7 +82,6 @@ async function getFiche(db: Database, name: string) {
     const persons = await getPersons(db, name, true);
     const person = persons && persons.length ? persons[0] : null;
     let body: string;
-    // TODO SECU
     if (person) {
         const img = person.photoUrl ?
             `<img src="${person.photoUrl}" />` : '';

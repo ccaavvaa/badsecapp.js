@@ -1,4 +1,4 @@
-import * as csv from 'csv-parse' // TODO SECU
+import * as csv from 'csv-parse';
 import express = require('express');
 import { asyncMiddleware } from '../tools/async-handler';
 

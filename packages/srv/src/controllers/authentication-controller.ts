@@ -18,16 +18,16 @@ export const authenticationRouter = express
         const password = getQueryParam(req, 'password') || '';
         const { databasePath, logger } = getServerContext(req);
 
-        let isAuthenticated = true;// TODO SECU
+        let isAuthenticated = true;
         try {
             const md5 = crypto.createHash('md5');
             const hash = md5.update(password).digest('hex');
 
-            if (login === 'admin' && hash !== '84d961568a65073a3bcf0eb216b2a576')// TODO SECU
+            if (login === 'admin' && hash !== '84d961568a65073a3bcf0eb216b2a576')
                 isAuthenticated = false;
             else if (login !== 'admin') {
                 await Database.exec(databasePath, async (db) => {
-                    const sr = await db.select(`SELECT hash FROM USERS WHERE login='${login}'`);// TODO SECU
+                    const sr = await db.select(`SELECT hash FROM USERS WHERE login='${login}'`);
                     isAuthenticated = sr ?? length ? sr[0].hash === hash : false;
                 });
             }
@@ -40,7 +40,6 @@ export const authenticationRouter = express
             (req.session as any).user = login;
             return { data: '', statusCode: 200 };
         } else {
-            // TODO SECU
             delete (req.session as any).user;
             return { data: '', statusCode: 401 };
         }
@@ -53,7 +52,7 @@ export const authenticationRouter = express
     })
     .post('/validate', express.text(), (req: express.Request) => {
         const xmlSrc = req.body as string;
-        const doc = libXml.parseXml(xmlSrc, { noent: true });// TODO SECU
+        const doc = libXml.parseXml(xmlSrc, { noent: true });
         return doc.toString();
     })
     .use(errorMiddleware);

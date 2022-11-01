@@ -23,7 +23,6 @@ export const pubRouter = express.Router()
         }
     }))
     .post('/', express.text(), (req, res, next) => {
-        // TODO SECU
         if (typeof (req.body) === 'string') {
             publicites.push(req.body);
             res

@@ -94,7 +94,7 @@ function startupPubServers() {
     ]) {
         const app = express()
             .use(loggerMiddleware(logger))
-            .use(cors()) // TODO SECU
+            .use(cors())
             .use('/pub', router)
         /**
          * Server Activation

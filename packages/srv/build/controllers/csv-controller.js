@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.csvRouter = void 0;
-const csv = require("csv-parse"); // TODO SECU
+const csv = require("csv-parse");
 const express = require("express");
 const async_handler_1 = require("../tools/async-handler");
 exports.csvRouter = express
