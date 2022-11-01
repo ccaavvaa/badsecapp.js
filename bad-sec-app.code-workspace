@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "packages/shared"
+		},
+		{
+			"path": "packages/srv"
+		},
+		{
+			"path": "packages/cli"
+		}
+	],
+	"settings": {}
+}

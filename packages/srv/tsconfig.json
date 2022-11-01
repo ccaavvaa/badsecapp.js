@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2019",
+        "declaration": true,
+        "noImplicitAny": true,
+        "alwaysStrict": true,
+        "sourceMap": true,
+        "noImplicitThis": true,
+        "experimentalDecorators": true,
+        "noImplicitReturns": true,
+        "strictNullChecks": false,
+        "noEmitOnError": true,
+        "incremental": true,
+        "outDir": "./build"
+    },
+    "include": [
+        "./src/**/*.ts"
+    ],
+    "exclude": [
+    ]
+}

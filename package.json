@@ -1,0 +1,15 @@
+{
+  "name": "bad-sec-app",
+  "version": "0.0.1",
+  "description": "root bad-sec-app",
+  "author": {
+    "name": "Catalin VASCU",
+    "email": "c.vascu@salviadeveloppement.com"
+  },
+  "workspaces": [
+    "packages\\cli",
+    "packages\\srv",
+    "packages\\shared"
+  ],
+  "license": "MIT"
+}
