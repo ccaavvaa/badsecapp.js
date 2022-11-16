@@ -45,9 +45,7 @@ const App: React.FC = () => {
                                 <Nav.Link>Login</Nav.Link>
                             </LinkContainer>
                             <LinkContainer to="/people">
-                                <Nav.Link
-                                    className={auth.isAuthenticated ? "" : "d-none"}
-                                >
+                                <Nav.Link className={auth.isAuthenticated ? "" : "d-none"}>
                                     People
                                 </Nav.Link>
                             </LinkContainer>
